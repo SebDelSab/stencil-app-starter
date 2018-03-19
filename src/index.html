@@ -18,9 +18,21 @@
 
 <advanced-searchbar  target_id="id"></advanced-searchbar>
 
- <p>This is a Test</p>
+ <p>This is a Test 2</p>
 
   <script>
+      
+      document.addEventListener('askResults',function(to_find){
+        let sb = document.getElementsByTagName('advanced-searchbar')[0]
+        sb.data = [{"id":"toto","text":"this is toto and he is funny","pill":"toto_pill"},{"id":"tata","text":"this is tata and she is funny too","pill":"tata_pill"},{"id":"titi","text":"this is titi and he is yellow","pill":"titi_pill"}];
+
+  sb.addEventListener('clickedOnResult',function(result){
+    console.log(result.detail)
+
+  })
+
+      } )
+  
     document.addEventListener('askResults',function(a){
       console.log("index side : "+a)
     })
