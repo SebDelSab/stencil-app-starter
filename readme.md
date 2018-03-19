@@ -50,3 +50,61 @@ To run the unit tests and watch for file changes during development, run:
 ```
 npm run test.watch
 ```
+
+## NB
+
+This component is still a prototype developped during Master's internship in Université Lyon 1, France
+
+More documentation coming soon
+
+## Example of use
+
+In your HTML file, place these in order to be able to use this package
+
+
+```html
+
+<head>
+ 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+ 	<script src='node_modules/advanced-searchbar/dist/advanced-searchbar.js'></script>
+</head>
+
+
+<advanced-searchbar target_id="searchfield" ></advanced-searchbar>
+
+```  
+
+## Release notes
+
+v 0.0.3 -> 0.0.5
+Emission of askResults event which send to the user the value he entered to allow him to request the word
+he entered on his server
+The next step is to allow him to send data to the component.
+
+v 0.0.6 -> 0.0.9
+
+Addition of dataReceived event listener
+
+v 0.0.10 -> 0.0.11
+
+No need for dataReceived event anymore, developping the functionnality to get a value when the user click on a row of the result
+
+v 0.0.12 -> 0.0.14
+
+Display the dataPanel even if the query has already been sent once by the user (test)
+
+v 0.0.15 -> 0.0.26
+
+Hide spinner when the dataPanel is displayed (still working on it)
+
+v 0.0.27 -> 0.0.28
+
+Small improvements
+
+v 0.0.29 -> 0.1.24
+
+Preparation to add matching fields into the dataPanel
+
+v 0.1.25 
+
+TEST 

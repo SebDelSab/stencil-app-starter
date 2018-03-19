@@ -1,8 +1,11 @@
 {
-  "name": "@stencil/starter",
-  "private": true,
-  "version": "0.0.1",
-  "description": "Stencil App Starter",
+  "name": "advanced-searchbar",
+  "private": false,
+  "version": "0.1.24",
+  "description": "Prototype for advanced search bar",
+  "main": "dist/advanced-searchbar.js",
+  "types": "dist/types/components.d.ts",
+  "collection": "dist/collection/collection-manifest.json",
   "files": [
     "dist/"
   ],
@@ -16,7 +19,9 @@
   },
   "dependencies": {
     "@stencil/core": "^0.6.1",
-    "@stencil/router": "latest"
+    "@stencil/router": "latest",
+    "@types/qwest": "^1.7.28",
+    "qwest": "^4.5.0"
   },
   "devDependencies": {
     "@stencil/dev-server": "latest",
@@ -28,7 +33,7 @@
     "type": "git",
     "url": "git+https://github.com/ionic-team/stencil-app-starter.git"
   },
-  "author": "Ionic Team",
+  "author": "sdelolme",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ionic-team/stencil"
