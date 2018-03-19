@@ -105,6 +105,6 @@ v 0.0.29 -> 0.1.24
 
 Preparation to add matching fields into the dataPanel
 
-v 0.1.25 
+v 0.1.25 -> 0.1.27
 
 TEST css modification
