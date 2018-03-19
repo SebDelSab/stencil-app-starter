@@ -20,8 +20,6 @@ div.searchbox div.dataPanel li {
 	cursor: pointer;
 	background-color: #fff; 
 	border-bottom: 1px solid #d4d4d4;
-	font-style: oblique;
-	color: blue;
 } 
 div.searchbox{
 	position: relative;
