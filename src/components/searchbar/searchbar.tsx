@@ -105,19 +105,8 @@ export class AdvancedSearchbar{
     	//console.log('The new value of activated is: ', newValue);
     	this._storeResult(this.value,newValue)
   	}
-  	buildResultMatch(matchstring,word){
-  		console.log(matchstring)
-  		console.log(word)
-		let newres = matchstring[0].replace(word,<strong>+word+</strong>)
-		console.log(newres)
-		return newres;
-	}
 
 	render(){
-		//console.log("render activated")
-		// cache is modified => this.value is found in cache 
-		// cache is modified => this.value is not match in cache
-		//console.log(this.safeKey)
 		if (this.cache.hasOwnProperty(this.value))
 			this.safeKey = this.value;
 
@@ -127,17 +116,13 @@ export class AdvancedSearchbar{
 
 			row = this.cache[this.safeKey].map((e) => {
 				let exp = new RegExp("(.{0,"+20+"})"+this.safeKey+"(.{0,"+20+"})")								// 20 is the number of characters we want before and after the word found
-				console.log(exp)
-				console.log(exp[1])
-				console.log(exp[2])
 				let matchAround = exp.exec(e["text"])
-				console.log(matchAround[1])
-				console.log(matchAround[2])
 				return <li onClick={()=> this.clickedOnResult.emit(e["id"])}> {e["id"] + " | " + matchAround[1]}<strong>{this.safeKey}</strong>{matchAround[2]}  </li> 
 			})
-			console.log(this.cache[this.safeKey])
+			//console.log(this.cache[this.safeKey])
 
 		}
+
 
 		return(
 			<div class="searchbox">
