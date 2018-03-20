@@ -105,6 +105,14 @@ v 0.0.29 -> 0.1.24
 
 Preparation to add matching fields into the dataPanel
 
-v 0.1.25 -> 0.1.28
+v 0.1.25 -> 0.1.29
 
 TEST css modification
+
+v 0.1.30 
+
+restore default css
+
+v 0.1.31
+
+Suppression of useless dependencies (qwest)
