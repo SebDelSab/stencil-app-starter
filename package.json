@@ -1,8 +1,8 @@
 {
   "name": "advanced-searchbar",
   "private": false,
-  "version": "0.1.24",
-  "description": "Prototype for advanced search bar",
+  "version": "1.0.0",
+  "description": "Prototype for advanced searchbar",
   "main": "dist/advanced-searchbar.js",
   "types": "dist/types/components.d.ts",
   "collection": "dist/collection/collection-manifest.json",
@@ -36,6 +36,7 @@
   "bugs": {
     "url": "https://github.com/ionic-team/stencil"
   },
+  "keywords": ["javascript","Stencil","web-components"],
   "homepage": "https://github.com/SebDelSab/web-components",
   "jest": {
     "transform": {

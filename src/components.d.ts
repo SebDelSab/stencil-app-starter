@@ -39,8 +39,6 @@ declare global {
   namespace JSXElements {
     export interface AdvancedSearchbarAttributes extends HTMLAttributes {
       data?: any;
-      matchingFields?: boolean;
-      target_id?: string;
     }
   }
 }

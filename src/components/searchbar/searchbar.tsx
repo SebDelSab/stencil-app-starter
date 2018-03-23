@@ -6,7 +6,8 @@ import {
 	Event, 
 	EventEmitter,  
 	Method,
-	Watch
+	Watch,
+	Listen
 	
 } from '@stencil/core';
 
@@ -18,12 +19,10 @@ import {
 
 export class AdvancedSearchbar{
 
-	@Prop() target_id: string;
 	lastval: string;
 	value: string;
 	@Element() host: HTMLElement;
 	@Prop() data; // add an option to avoid rerendering
-	@Prop() matchingFields: boolean;
 	@Event() clickedOnResult: EventEmitter;
 	@Event() askResults: EventEmitter;
 
@@ -51,7 +50,7 @@ export class AdvancedSearchbar{
 
 		// if asked string research has already been performed and stored in cache 
 		if(self.cache.hasOwnProperty(id) ){
-			console.log("request not send")
+			//console.log("request not send")
 			self._hideSpinner()
 			let test = this.cache;
 			this.cache = {...test}	
@@ -84,45 +83,41 @@ export class AdvancedSearchbar{
 	}
 
 	@Method()
-	getValue(){
-		return(this.host.getElementsByTagName('input')[0]['value']);
-	}
-
-	@Method()
 	destroy(){
 		this.host.parentNode.removeChild(this.host)
 	}
 
-	clearDataPanel(){
-		let parent = this.host.getElementsByClassName("dPContent")[0];
-		while(parent.lastChild){
-			parent.removeChild(parent.lastChild)
-		}
-	}
-
 	@Watch('data')
 	 watchHandler(newValue: boolean, oldValue: boolean) {
-    	//console.log('The new value of activated is: ', newValue);
     	this._storeResult(this.value,newValue)
+  	}
+
+  	// ask Guillaume's opinion
+  	@Listen('document:click')
+  	clickEventHandler(target){
+  		if (this.host.contains(target.target)){
+  			this.showDataPanel()
+  		}
+  		else{
+  			this.hideDataPanel()
+  		}
   	}
 
 	render(){
 		if (this.cache.hasOwnProperty(this.value))
 			this.safeKey = this.value;
 
-		console.log(this.cache)
+		//console.log(this.cache)
 		let row = [];
 		if(Object.keys(this.cache).length > 0 && this.safeKey){
 
 			row = this.cache[this.safeKey].map((e) => {
 				let exp = new RegExp("(.{0,"+20+"})"+this.safeKey+"(.{0,"+20+"})")								// 20 is the number of characters we want before and after the word found
-				let matchAround = exp.exec(e["text"])
-				return <li onClick={()=> this.clickedOnResult.emit(e["id"])}> {e["id"] + " | " + matchAround[1]}<strong>{this.safeKey}</strong>{matchAround[2]}  </li> 
+				let matchAround = exp.exec(e["text"])	// (the last occurence)
+				//console.log(matchAround)
+				return <li onClick={()=> this.clickedOnResult.emit(e["id"])}> {e["id"] + " | " + matchAround[1]}<strong>{this.safeKey}</strong>{matchAround[2]} {" | " } <a class="matchingField"> {e["pill"]} </a> </li> 
 			})
-			//console.log(this.cache[this.safeKey])
-
 		}
-
 
 		return(
 			<div class="searchbox">
