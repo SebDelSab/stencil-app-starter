@@ -125,3 +125,7 @@ v 1.0.0
 
 First release, the searchbar now contains the matching field inside a pill
 A click outside of the searchbar will hide the dataPanel which appear when a result is sent to the component.
+
+v 1.0.1
+
+Improvement of the pill rendering

@@ -34,9 +34,12 @@
   "author": "sdelolme",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ionic-team/stencil"
+    "url": "https://github.com/SebDelSab/web-components"
   },
-  "keywords": ["javascript","Stencil","web-components"],
+  "keywords": [
+    "javascript",
+    "Stencil",
+    "web-components"],
   "homepage": "https://github.com/SebDelSab/web-components",
   "jest": {
     "transform": {

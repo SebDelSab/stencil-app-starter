@@ -115,7 +115,7 @@ export class AdvancedSearchbar{
 				let exp = new RegExp("(.{0,"+20+"})"+this.safeKey+"(.{0,"+20+"})")								// 20 is the number of characters we want before and after the word found
 				let matchAround = exp.exec(e["text"])	// (the last occurence)
 				//console.log(matchAround)
-				return <li onClick={()=> this.clickedOnResult.emit(e["id"])}> {e["id"] + " | " + matchAround[1]}<strong>{this.safeKey}</strong>{matchAround[2]} {" | " } <a class="matchingField"> {e["pill"]} </a> </li> 
+				return <li onClick={()=> this.clickedOnResult.emit(e["id"])}> <div class="matching"><a class="matchingField"> {e["pill"]} </a></div> <div class="information">{e["id"] + " | " + matchAround[1]}<strong>{this.safeKey}</strong>{matchAround[2]} </div> </li> 
 			})
 		}
 
