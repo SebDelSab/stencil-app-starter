@@ -1,7 +1,7 @@
 exports.config = {
-	//namespace: 'advanced-searchbar',
-	//generateDistribution: true,
-	generateWWW: true,
+	namespace: 'advanced-searchbar',
+	generateDistribution: true,
+	generateWWW: false,
 	bundles: [
 	{ components: ['advanced-searchbar'] }
 	],
