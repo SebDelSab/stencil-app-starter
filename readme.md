@@ -1,5 +1,6 @@
 # Advanced-searchbar
 
+Last modify 27/04
 
 The advanced-searchbar is a web-component that was developped using Stencil (v0.6.1), a web-component compiler developped by the ionic team. 
 You can find a link to know how to do some [here](https://stenciljs.com/)
